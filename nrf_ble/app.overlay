@@ -1,0 +1,14 @@
+/ {
+    aliases {
+        /* Devicetree uses hyphens. We map 'nrf-irq' to our hardware node below */
+        nrf-irq = &my_nrf_irq_pin;
+    };
+
+    custom_hardware {
+        compatible = "gpio-keys";
+
+        my_nrf_irq_pin: irq_pin {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        };
+    };
+};

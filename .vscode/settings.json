@@ -1,6 +1,6 @@
 {
     "nrf-connect.applications": [
-        "${workspaceFolder}\\blinky"
+        "${workspaceFolder}\\NRF_BLE"
     ],
-    "cmake.sourceDirectory": "D:/NRF_projects/blinky"
+    "cmake.sourceDirectory": "D:/NRF_projects/NRF_BLE"
 }

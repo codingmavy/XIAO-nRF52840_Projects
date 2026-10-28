@@ -6,7 +6,7 @@ set(BOARD_DEBUG_RUNNER openocd)
 
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-project(blinky)
+project(NRF_BLE)
 
 include(${ZEPHYR_BASE}/boards/common/openocd.board.cmake)
 
@@ -17,4 +17,4 @@ board_runner_args(openocd
     "--cmd-pre-init=source [find target/nordic/nrf52.cfg]")
 message(STATUS ">>> runner args applied")   
 
-target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE src/main.c src/test.c)
