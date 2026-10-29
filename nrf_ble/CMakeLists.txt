@@ -17,4 +17,4 @@ board_runner_args(openocd
     "--cmd-pre-init=source [find target/nordic/nrf52.cfg]")
 message(STATUS ">>> runner args applied")   
 
-target_sources(app PRIVATE src/main.c src/test.c)
+target_sources(app PRIVATE src/main.c src/test.c src/new_led.c)
