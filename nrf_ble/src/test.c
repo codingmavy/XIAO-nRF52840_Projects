@@ -1,6 +1,9 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/printk.h>
+// #include <zephyr/logging/log.h>
+
+// LOG_MODULE_REGISTER(test,LOG_LEVEL_INF);
 
 #define set_delay 500
 
@@ -33,9 +36,11 @@ int init_led(void)
 int led_toggle(const struct gpio_dt_spec *led, const char *name)
 {
         gpio_pin_set_dt(led, 1);
+        // LOG_INF("%s is on", name);
         printk("%s is on\n", name);
         k_msleep(set_delay);
         gpio_pin_set_dt(led, 0);
+        // LOG_INF("%s is off", name);
         printk("%s is off\n", name);
         k_msleep(set_delay);
         return 0;

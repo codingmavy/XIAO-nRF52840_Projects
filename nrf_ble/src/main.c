@@ -3,13 +3,16 @@
 #include <zephyr/sys/printk.h>
 #include "test.h"
 #include "new_led.h"
+// #include <zephyr/logging/log.h>
 
+// LOG_MODULE_REGISTER(main,LOG_LEVEL_INF);
 int main(void)
 {
+        // LOG_INF("System booted successfully");
+        printk("System booted successfully\n");
         while(1){
           new_led();
           k_msleep(1000);
-          printk("main code running\n");
         }
         return 0;
 }
